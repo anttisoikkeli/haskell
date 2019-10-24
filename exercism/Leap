@@ -1,0 +1,9 @@
+module LeapYear (isLeapYear) where
+
+isLeapYear :: Integer -> Bool
+isLeapYear year = 
+  let 
+    everyFourth = rem year 4 == 0
+    notOneHundred = rem year 100 /= 0
+    fourHundred = rem year 400 == 0
+  in everyFourth && (notOneHundred || fourHundred)
